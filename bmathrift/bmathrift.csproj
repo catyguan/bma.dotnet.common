@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F568126-3921-4FFC-9A11-F59BA1B2D9D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bmathrift</RootNamespace>
+    <AssemblyName>bmathrift</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\Collections\THashSet.cs" />
+    <Compile Include="core\Protocol\TBase.cs" />
+    <Compile Include="core\Protocol\TBase64Utils.cs" />
+    <Compile Include="core\Protocol\TBinaryProtocol.cs" />
+    <Compile Include="core\Protocol\TField.cs" />
+    <Compile Include="core\Protocol\TJSONProtocol.cs" />
+    <Compile Include="core\Protocol\TList.cs" />
+    <Compile Include="core\Protocol\TMap.cs" />
+    <Compile Include="core\Protocol\TMessage.cs" />
+    <Compile Include="core\Protocol\TMessageType.cs" />
+    <Compile Include="core\Protocol\TProtocol.cs" />
+    <Compile Include="core\Protocol\TProtocolException.cs" />
+    <Compile Include="core\Protocol\TProtocolFactory.cs" />
+    <Compile Include="core\Protocol\TProtocolUtil.cs" />
+    <Compile Include="core\Protocol\TSet.cs" />
+    <Compile Include="core\Protocol\TStruct.cs" />
+    <Compile Include="core\Protocol\TType.cs" />
+    <Compile Include="core\Server\TServer.cs" />
+    <Compile Include="core\Server\TSimpleServer.cs" />
+    <Compile Include="core\Server\TThreadedServer.cs" />
+    <Compile Include="core\Server\TThreadPoolServer.cs" />
+    <Compile Include="core\TApplicationException.cs" />
+    <Compile Include="core\TProcessor.cs" />
+    <Compile Include="core\Transport\TBufferedTransport.cs" />
+    <Compile Include="core\Transport\TFramedTransport.cs" />
+    <Compile Include="core\Transport\THttpClient.cs" />
+    <Compile Include="core\Transport\TServerSocket.cs" />
+    <Compile Include="core\Transport\TServerTransport.cs" />
+    <Compile Include="core\Transport\TSocket.cs" />
+    <Compile Include="core\Transport\TStreamTransport.cs" />
+    <Compile Include="core\Transport\TTransport.cs" />
+    <Compile Include="core\Transport\TTransportException.cs" />
+    <Compile Include="core\Transport\TTransportFactory.cs" />
+    <Compile Include="ext\Protocol\TModuleProtocol.cs" />
+    <Compile Include="ext\Protocol\TProtocolWrap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sample\Hello.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bmalangutil\bmalangutil.csproj">
+      <Project>{5e813583-56c9-4748-b224-c8c48cb78e5a}</Project>
+      <Name>bmalangutil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
