@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,12 +42,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\ConcurrentLinkedQueue.cs" />
+    <Compile Include="core\VPath.cs" />
     <Compile Include="forms\AppThreadTask.cs" />
     <Compile Include="core\TimeOut.cs" />
+    <Compile Include="forms\CommandHistory.cs" />
+    <Compile Include="forms\ShellControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\ShellTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="net\TcpClientUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="forms\ShellControl.resx" />
+    <EmbeddedResource Include="forms\ShellTextBox.resx" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
