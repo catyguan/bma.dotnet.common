@@ -189,10 +189,15 @@ namespace bmalangutil.forms.shellctrl
 				return "";
 		}
 
-	        private string GetTextAtPrompt()
+	    private string GetTextAtPrompt()
 		{
-	            return GetCurrentLine().Substring(prompt.Length);
-        	}
+            string l = GetCurrentLine();
+            if (l.Length > prompt.Length)
+            {
+                return GetCurrentLine().Substring(prompt.Length);
+            }
+            return "";
+        }
 
 		private void ReplaceTextAtPrompt(string text)
 		{
