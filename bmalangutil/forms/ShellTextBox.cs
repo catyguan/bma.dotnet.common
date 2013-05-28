@@ -13,7 +13,9 @@ namespace bmalangutil.forms.shellctrl
 	internal class ShellTextBox : TextBox
 	{
 		private string prompt = ">>>";
-	        private CommandHistory commandHistory = new CommandHistory();
+	    private CommandHistory commandHistory = new CommandHistory();
+        private String lastCommand = "";
+
 		/// <summary> 
 		/// Required designer variable.
 		/// </summary>
@@ -128,8 +130,9 @@ namespace bmalangutil.forms.shellctrl
 				if (currentCommand.Length != 0)
 				{
 					printLine();
-					((ShellControl)this.Parent).FireCommandEntered(currentCommand);
+					((ShellControl)this.Parent).FireCommandEntered(currentCommand);                    
 					commandHistory.Add(currentCommand);
+                    lastCommand = currentCommand;
 				}
 				printPrompt();
 			}
@@ -260,6 +263,11 @@ namespace bmalangutil.forms.shellctrl
         	{
 	            return commandHistory.GetCommandHistory();
         	}
+
+            public string GetLastCommand()
+            {
+                return lastCommand;
+            }
 
 	        public void WriteText(string text)
        		{

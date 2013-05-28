@@ -103,6 +103,11 @@ namespace bmalangutil.forms.shellctrl
 			return shellTextBox.GetCommandHistory();
 		}
 
+        public String GetLastCommand()
+        {
+            return shellTextBox.GetLastCommand();
+        }
+
 
 		public string Prompt
 		{
