@@ -52,6 +52,8 @@
     <Compile Include="forms\ShellTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="jsondoc\JsonProject.cs" />
+    <Compile Include="jsondoc\JsonProjectManager.cs" />
     <Compile Include="net\TcpClientUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
